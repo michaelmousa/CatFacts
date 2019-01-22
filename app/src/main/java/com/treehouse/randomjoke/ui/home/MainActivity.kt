@@ -9,6 +9,8 @@ import com.treehouse.randomjoke.App
 import com.treehouse.randomjoke.R
 import com.treehouse.randomjoke.R.id.message
 import com.treehouse.randomjoke.network.popServices
+import com.treehouse.randomjoke.ui.home.di.DaggerHomeComponent
+import com.treehouse.randomjoke.ui.home.di.HomeModule
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -17,16 +19,19 @@ class MainActivity : AppCompatActivity(),HomeContract.View {
 
     private val RanAdapter = RanAdapter()
     @Inject
-    lateinit var popServices: popServices
+    lateinit var homePresenter: HomeContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        (application as App).getComponent().inject(this)
+        DaggerHomeComponent.builder()
+            .appComponent((application as App).getComponent())
+            .homeModule(HomeModule(this))
+            .build()
+            .inject(this)
 
-
-        val homePresenter: HomeContract.Presenter = HomePresenter(popServices, this)
+        //val homePresenter: HomeContract.Presenter = HomePresenter(popServices, this)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RanAdapter

@@ -1,5 +1,6 @@
 package com.treehouse.randomjoke.di
 
+import com.treehouse.randomjoke.network.BASE_URL
 import com.treehouse.randomjoke.network.popServices
 import dagger.Module
 import dagger.Provides
@@ -39,7 +40,7 @@ class NetworkModule{
     @Provides
     fun provideRetrofitBuilder(): Retrofit.Builder {
         return Retrofit.Builder()
-            .baseUrl("https://api.chucknorris.io/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
     }
 
