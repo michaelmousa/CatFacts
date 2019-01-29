@@ -1,8 +1,8 @@
-package com.treehouse.randomjoke.ui.home.di
+package com.treehouse.CatFacts.ui.home.di
 
-import com.treehouse.randomjoke.network.popServices
-import com.treehouse.randomjoke.ui.home.HomeContract
-import com.treehouse.randomjoke.ui.home.HomePresenter
+import com.treehouse.CatFacts.network.popServices
+import com.treehouse.CatFacts.ui.home.HomeContract
+import com.treehouse.CatFacts.ui.home.HomePresenter
 import dagger.Module
 import dagger.Provides
 

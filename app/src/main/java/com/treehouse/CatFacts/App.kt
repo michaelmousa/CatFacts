@@ -1,8 +1,8 @@
-package com.treehouse.randomjoke
+package com.treehouse.CatFacts
 
 import android.app.Application
-import com.treehouse.randomjoke.di.AppComponent
-import com.treehouse.randomjoke.di.DaggerAppComponent
+import com.treehouse.CatFacts.di.AppComponent
+import com.treehouse.CatFacts.di.DaggerAppComponent
 
 class App : Application() {
 

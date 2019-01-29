@@ -1,17 +1,18 @@
-package com.treehouse.randomjoke.ui.home
+package com.treehouse.CatFacts.ui.home
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.treehouse.CatFacts.model.ArrResponse
 import com.treehouse.randomjoke.R
 
 class RanAdapter : RecyclerView.Adapter<RanAdapter.RanViewHolder>() {
 
 
-    private val data = arrayListOf<com.treehouse.randomjoke.model.Response>()
-    fun setData(data: List<com.treehouse.randomjoke.model.Response>) {
+    private val data = arrayListOf<ArrResponse>()
+    fun setData(data: List<ArrResponse>) {
 
         this.data.clear()
         this.data.addAll(data)
@@ -35,9 +36,27 @@ class RanAdapter : RecyclerView.Adapter<RanAdapter.RanViewHolder>() {
 
     class RanViewHolder(private val rootView: View) : RecyclerView.ViewHolder(rootView) {
 
-        fun bind(data: com.treehouse.randomjoke.model.Response) {
+        fun bind(data: ArrResponse) {
 
-            val tvIcon_url =rootView.findViewById<TextView>(R.id.tvIcon_url)
+            val tvI_id =rootView.findViewById<TextView>(R.id.tvI_id)
+            tvI_id.text= data._id
+
+            val tvV_V =rootView.findViewById<TextView>(R.id.tvV_V)
+            tvV_V.text= data.__v
+
+            val tvText1 =rootView.findViewById<TextView>(R.id.tvText1)
+            tvText1.text= data.text
+
+            val tvUpdatedAt =rootView.findViewById<TextView>(R.id.tvUpdatedAt)
+            tvUpdatedAt.text= data.updatedAt
+
+            val tvCreatedAt =rootView.findViewById<TextView>(R.id.tvCreatedAt)
+            tvCreatedAt.text= data.source
+
+
+
+
+            /*val tvIcon_url =rootView.findViewById<TextView>(R.id.tvIcon_url)
             tvIcon_url.text= data.icon_url
 
             val tvId =rootView.findViewById<TextView>(R.id.tvId)
@@ -47,7 +66,7 @@ class RanAdapter : RecyclerView.Adapter<RanAdapter.RanViewHolder>() {
             tvUrl.text= data.url
 
             val tvValue =rootView.findViewById<TextView>(R.id.tvValue)
-            tvValue.text= data.value
+            tvValue.text= data.value*/
 
 
         }

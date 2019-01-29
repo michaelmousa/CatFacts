@@ -1,4 +1,4 @@
-package com.treehouse.randomjoke.di
+package com.treehouse.CatFacts.di
 
 import javax.inject.Qualifier
 

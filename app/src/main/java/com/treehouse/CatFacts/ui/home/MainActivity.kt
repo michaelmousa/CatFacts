@@ -1,20 +1,20 @@
-package com.treehouse.randomjoke.ui.home
+package com.treehouse.CatFacts.ui.home
 
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
-import com.treehouse.randomjoke.App
+import com.treehouse.CatFacts.App
+import com.treehouse.CatFacts.model.ArrResponse
+import com.treehouse.CatFacts.ui.home.di.DaggerHomeComponent
 import com.treehouse.randomjoke.R
 import com.treehouse.randomjoke.R.id.message
-import com.treehouse.randomjoke.network.popServices
-import com.treehouse.randomjoke.ui.home.di.DaggerHomeComponent
-import com.treehouse.randomjoke.ui.home.di.HomeModule
+import com.treehouse.CatFacts.ui.home.di.HomeModule
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(),HomeContract.View {
+class MainActivity : AppCompatActivity(), HomeContract.View {
 
 
     private val RanAdapter = RanAdapter()
@@ -37,13 +37,16 @@ class MainActivity : AppCompatActivity(),HomeContract.View {
         recyclerView.adapter = RanAdapter
 
         btnRandom.setOnClickListener{
-            homePresenter.getRandomDetails(icon_url = String(),id = String(),
-                url = String(),value = String())
+
+            homePresenter.getRandomDetails(_id = String(),__v = String(),
+                text = String(),updatedAt = String(),deleted = String(),source = String(),used = String())
+            /*homePresenter.getRandomDetails(icon_url = String(),id = String(),
+                url = String(),value = String())*/
         }
     }
-    override fun showResults(results: List<com.treehouse.randomjoke.model.Response>)
+    override fun showResults(result: List<ArrResponse>)
     {
-        RanAdapter.setData(results)
+        RanAdapter.setData(result)
     }
 
 

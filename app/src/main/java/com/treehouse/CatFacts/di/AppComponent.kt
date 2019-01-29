@@ -1,8 +1,7 @@
-package com.treehouse.randomjoke.di
+package com.treehouse.CatFacts.di
 
 
-import com.treehouse.randomjoke.network.popServices
-import com.treehouse.randomjoke.ui.home.MainActivity
+import com.treehouse.CatFacts.network.popServices
 import dagger.Component
 import javax.inject.Singleton
 

@@ -1,4 +1,4 @@
-package com.treehouse.randomjoke.ui.home.di
+package com.treehouse.CatFacts.ui.home.di
 
 import javax.inject.Scope
 

@@ -1,7 +1,7 @@
-package com.treehouse.randomjoke.di
+package com.treehouse.CatFacts.di
 
-import com.treehouse.randomjoke.network.BASE_URL
-import com.treehouse.randomjoke.network.popServices
+import com.treehouse.CatFacts.network.BASE_URL
+import com.treehouse.CatFacts.network.popServices
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
